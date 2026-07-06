@@ -67,16 +67,19 @@ having count(*) filter (where not qa.is_correct) > 0
 order by echecs desc;
 ```
 
-## Mise en place sur Neon
+## Mise en place sur Supabase
 
-1. Créer un projet Neon (Postgres serverless) et récupérer la chaîne de connexion (`DATABASE_URL`).
-2. Copier `.env.example` (à la racine du projet) vers `.env` et renseigner `DATABASE_URL`.
-3. Exécuter dans l'ordre :
+> Neon a été écarté : son site est bloqué par la politique réseau de l'utilisateur (proxy d'entreprise, catégorie "Business Information"). Supabase est accessible et déjà utilisé (2 projets existants) — il suffit de mettre en pause un projet existant pour libérer un slot sous le free tier (limite : 2 projets actifs).
+
+1. Sur [supabase.com](https://supabase.com), mettre en pause (ou supprimer si obsolète) un des 2 projets existants, puis créer un nouveau projet pour Gestalt App.
+2. Récupérer la chaîne de connexion Postgres directe : *Project Settings → Database → Connection string* (mode "Session" ou "Transaction pooler" selon le besoin). On se connecte en SQL standard, **pas besoin du SDK `supabase-py`**.
+3. Copier `.env.example` (à la racine du projet) vers `.env` et renseigner `DATABASE_URL` avec cette chaîne.
+4. Exécuter dans l'ordre :
    ```bash
    psql "$DATABASE_URL" -f data/schema.sql
    psql "$DATABASE_URL" -f data/seed_themes.sql
    ```
-4. (À venir) Un script `data/seed_questions.sql` insérera la banque de questions initiale une fois générée.
+5. (À venir) Un script `data/seed_questions.sql` insérera la banque de questions initiale une fois générée.
 
 ## Choix délibérément simples (YAGNI)
 

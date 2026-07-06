@@ -23,9 +23,11 @@ gestalt-app/
 └── data/                       # schéma de la base de données QCM (Neon/PostgreSQL) + seeds
 ```
 
-## Base de données : Neon (PostgreSQL serverless)
+## Base de données : Supabase (PostgreSQL)
 
-Choix fait après avoir buté sur la limite de 2 projets actifs du free tier Supabase. **Neon** héberge uniquement les données du système de QCM (thèmes, questions, choix, historique des réponses) — le contenu pédagogique reste dans `docs/cours/` et `docs/sources/`, lu directement par l'app. Voir `data/README.md` pour le détail du schéma, les requêtes types et la mise en place.
+Le choix a hésité entre Supabase et Neon : Neon a été écarté car son site (neon.com) est bloqué par la politique réseau de l'entreprise de l'utilisateur (catégorie "Business Information", proxy Cato Networks) — un blocage large et imprévisible. Supabase est retenu car son site est déjà accessible (2 projets existants) : il suffit de mettre en pause un projet existant pour libérer un slot sous le free tier (limite de 2 projets actifs).
+
+Supabase héberge uniquement les données du système de QCM (thèmes, questions, choix, historique des réponses) — le contenu pédagogique reste dans `docs/cours/` et `docs/sources/`, lu directement par l'app. La connexion se fait en Postgres standard (chaîne de connexion directe, pas besoin du SDK `supabase-py`) : le schéma dans `data/schema.sql` est du SQL Postgres générique, sans dépendance à un fournisseur particulier. Voir `data/README.md` pour le détail du schéma, les requêtes types et la mise en place.
 
 Caractéristiques du QCM retenues :
 - **Choix unique** par question (4 propositions, une seule correcte).
