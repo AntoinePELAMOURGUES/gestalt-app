@@ -33,7 +33,7 @@ else:
                 {"Question": m["question_text"], "Échecs": m["echecs"], "Tentatives": m["tentatives"]}
                 for m in missed
             ],
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
     else:

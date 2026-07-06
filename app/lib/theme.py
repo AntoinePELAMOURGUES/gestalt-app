@@ -23,6 +23,18 @@ h1, h2, h3, h4 {{
 html, body, [class*="css"] {{
     font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 }}
+
+/* Fond texturé façon figure/fond : deux halos organiques très doux (terracotta
+   en haut à droite, sauge en bas à gauche) qui se fondent dans l'ivoire, au
+   lieu d'un aplat plat. Ciblage double (.stApp + data-testid) pour rester
+   compatible entre versions de Streamlit. */
+.stApp, [data-testid="stAppViewContainer"] {{
+    background:
+        radial-gradient(circle at 88% -8%, rgba(193, 96, 44, 0.12), transparent 42%),
+        radial-gradient(circle at -8% 108%, rgba(92, 122, 94, 0.12), transparent 42%),
+        {COLORS["background"]};
+    background-attachment: fixed;
+}}
 .gestalt-badge {{
     display: inline-block;
     padding: 0.2rem 0.75rem;

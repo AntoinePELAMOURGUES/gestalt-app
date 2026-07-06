@@ -15,6 +15,6 @@ weekend = WEEKENDS[selected]
 
 cover = image_path(weekend["cover"])
 if cover:
-    st.image(str(cover), use_container_width=True)
+    st.image(str(cover), width="stretch")
 
 st.markdown(read_weekend(weekend))
