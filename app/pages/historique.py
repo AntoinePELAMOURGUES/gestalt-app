@@ -1,7 +1,8 @@
 import streamlit as st
 
+from lib.content import theme_icon
 from lib.queries import most_missed_questions, overall_stats, stats_by_theme
-from lib.theme import badge, status_for_pct
+from lib.theme import status_for_pct, theme_card
 
 st.title("Historique & progression")
 
@@ -18,12 +19,13 @@ else:
     st.subheader("Progression par thème")
     for row in stats_by_theme():
         status, label = status_for_pct(row["pct_reussite"])
-        with st.container(border=True):
-            st.markdown(
-                f"**Thème {row['number']} — {row['title']}** · "
-                f"{row['correctes']}/{row['total']} bonnes réponses ({row['pct_reussite']}%)"
-            )
-            badge(label, status)
+        theme_card(
+            theme_icon(row["number"]),
+            f"**Thème {row['number']} — {row['title']}** · "
+            f"{row['correctes']}/{row['total']} bonnes réponses ({row['pct_reussite']}%)",
+            status,
+            label,
+        )
 
     st.subheader("Questions les plus souvent ratées")
     missed = most_missed_questions()

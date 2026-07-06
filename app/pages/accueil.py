@@ -1,7 +1,8 @@
 import streamlit as st
 
+from lib.content import theme_icon
 from lib.queries import get_themes, overall_stats, stats_by_theme
-from lib.theme import badge, status_for_pct
+from lib.theme import status_for_pct, theme_card
 
 st.title("Bienvenue")
 st.write(
@@ -26,9 +27,12 @@ for theme in themes:
     row = theme_stats.get(theme["number"])
     pct = row["pct_reussite"] if row else None
     status, label = status_for_pct(pct)
-    with st.container(border=True):
-        st.markdown(f"**Thème {theme['number']} — {theme['title']}**")
-        badge(label, status)
+    theme_card(
+        theme_icon(theme["number"]),
+        f"**Thème {theme['number']} — {theme['title']}**",
+        status,
+        label,
+    )
 
 st.divider()
 c1, c2 = st.columns(2)

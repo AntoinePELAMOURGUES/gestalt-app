@@ -70,6 +70,21 @@ def badge(label, status="neutral"):
     )
 
 
+def theme_card(icon_path, body_markdown, status, label):
+    """Carte d'un thème : pictogramme optionnel (theme_icon) + texte + badge de statut."""
+    with st.container(border=True):
+        if icon_path:
+            col_icon, col_body = st.columns([1, 6])
+            with col_icon:
+                st.image(str(icon_path), width="stretch")
+            with col_body:
+                st.markdown(body_markdown)
+                badge(label, status)
+        else:
+            st.markdown(body_markdown)
+            badge(label, status)
+
+
 def feedback_box(correct, text):
     status = "correct" if correct else "incorrect"
     icon = "✓" if correct else "○"
