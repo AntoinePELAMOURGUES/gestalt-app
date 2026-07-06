@@ -69,17 +69,19 @@ order by echecs desc;
 
 ## Mise en place sur Supabase
 
-> Neon a été écarté : son site est bloqué par la politique réseau de l'utilisateur (proxy d'entreprise, catégorie "Business Information"). Supabase est accessible et déjà utilisé (2 projets existants) — il suffit de mettre en pause un projet existant pour libérer un slot sous le free tier (limite : 2 projets actifs).
+> Neon a été écarté : son site est bloqué par la politique réseau de l'utilisateur (proxy d'entreprise, catégorie "Business Information"). Supabase est accessible et déjà utilisé, mais les 2 projets existants sous le free tier sont activement utilisés (pas de pause possible). Solution retenue : créer le projet Gestalt App sous un **second compte/organisation Supabase** (email différent) — gratuit, zéro changement dans le schéma ou l'app.
 
-1. Sur [supabase.com](https://supabase.com), mettre en pause (ou supprimer si obsolète) un des 2 projets existants, puis créer un nouveau projet pour Gestalt App.
+1. Créer un nouveau compte Supabase avec une autre adresse email, puis un nouveau projet pour Gestalt App dans ce compte.
 2. Récupérer la chaîne de connexion Postgres directe : *Project Settings → Database → Connection string* (mode "Session" ou "Transaction pooler" selon le besoin). On se connecte en SQL standard, **pas besoin du SDK `supabase-py`**.
 3. Copier `.env.example` (à la racine du projet) vers `.env` et renseigner `DATABASE_URL` avec cette chaîne.
 4. Exécuter dans l'ordre :
    ```bash
    psql "$DATABASE_URL" -f data/schema.sql
    psql "$DATABASE_URL" -f data/seed_themes.sql
+   psql "$DATABASE_URL" -f data/seed_questions.sql
    ```
-5. (À venir) Un script `data/seed_questions.sql` insérera la banque de questions initiale une fois générée.
+
+`data/seed_questions.sql` contient une première banque de 57 questions générée à partir de `docs/cours/*.md` (4 choix par question, 1 seule bonne réponse, explication et `source_file` renseignés, tags de thème via `question_themes` — certaines questions touchent plusieurs thèmes à la fois, fidèle à la logique N:N du schéma).
 
 ## Choix délibérément simples (YAGNI)
 
