@@ -1,28 +1,23 @@
 import streamlit as st
 
-from lib.content import WEEKENDS, image_path, read_weekend, schema_images
+from lib.content import THEMES, read_theme, theme_icon
 
 st.title("Cours — Cycle 1")
-st.caption("6 week-ends de formation, retranscription fidèle des notes de cours.")
+st.caption(
+    "Les 11 thèmes officiels du QCM. Chaque fiche rassemble ce qui a été enseigné "
+    "en formation et des sources vérifiées, où que le sujet ait été abordé."
+)
 
-titles = [f"Week-end {w['order']} — {w['title']}" for w in WEEKENDS]
+titles = [f"{t['number']}. {t['title']}" for t in THEMES]
 selected = st.selectbox(
-    "Choisir un week-end",
-    options=range(len(WEEKENDS)),
+    "Choisir un thème",
+    options=range(len(THEMES)),
     format_func=lambda i: titles[i],
 )
-weekend = WEEKENDS[selected]
+theme = THEMES[selected]
 
-cover = image_path(weekend["cover"])
-if cover:
-    st.image(str(cover), width="stretch")
+icon = theme_icon(theme["number"])
+if icon:
+    st.image(str(icon), width=120)
 
-schemas = schema_images(weekend)
-if schemas:
-    st.subheader("Schémas du week-end")
-    cols = st.columns(min(3, len(schemas)))
-    for i, (path, label) in enumerate(schemas):
-        with cols[i % len(cols)]:
-            st.image(str(path), caption=label, width="stretch")
-
-st.markdown(read_weekend(weekend))
+st.markdown(read_theme(theme))

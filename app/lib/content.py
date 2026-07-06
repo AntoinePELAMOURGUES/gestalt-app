@@ -1,65 +1,52 @@
+import base64
+import re
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-COURS_DIR = REPO_ROOT / "docs" / "cours"
+THEMES_DIR = REPO_ROOT / "docs" / "themes"
 IMAGES_DIR = Path(__file__).resolve().parent.parent / "assets" / "images"
 
-WEEKENDS = [
-    {"order": 1, "file": "01-nouveau-depart.md", "title": "Nouveau départ", "cover": "couverture-01-nouveau-depart.png"},
-    {"order": 2, "file": "02-clarte.md", "title": "Clarté", "cover": "couverture-02-clarte.png"},
-    {"order": 3, "file": "03-vivre.md", "title": "Vivre", "cover": "couverture-03-vivre.png"},
-    {"order": 4, "file": "04-relation.md", "title": "Relation", "cover": "couverture-04-relation.png"},
-    {"order": 5, "file": "05-expression.md", "title": "Expression", "cover": "couverture-05-expression.png"},
-    {"order": 6, "file": "06-confiance.md", "title": "Confiance", "cover": "couverture-06-confiance.png"},
+THEMES = [
+    {"number": 1, "title": "Qu'est-ce que la Gestalt ?", "file": "01-quest-ce-que-la-gestalt.md"},
+    {"number": 2, "title": "L'ici et maintenant", "file": "02-ici-et-maintenant.md"},
+    {"number": 3, "title": "Théorie du champ", "file": "03-theorie-du-champ.md"},
+    {"number": 4, "title": "Théorie du self / Frontière-contact", "file": "04-theorie-du-self.md"},
+    {"number": 5, "title": "Page blanche / Ajustements", "file": "05-page-blanche.md"},
+    {"number": 6, "title": "Valeurs et déontologie", "file": "06-valeurs-et-deontologie.md"},
+    {"number": 7, "title": "Communication bienveillante", "file": "07-communication-bienveillante.md"},
+    {"number": 8, "title": "Mécanismes de régulation du contact", "file": "08-mecanismes-de-regulation-du-contact.md"},
+    {"number": 9, "title": "Les 4 champs thérapeutiques", "file": "09-quatre-champs-therapeutiques.md"},
+    {"number": 10, "title": "Vision gestaltiste du stress", "file": "10-vision-gestaltiste-du-stress.md"},
+    {"number": 11, "title": "Le cycle du contact", "file": "11-cycle-du-contact.md"},
 ]
 
-
-# Schémas pédagogiques (catégorie A de docs/images/prompts-nanobanana.txt),
-# rattachés au week-end où ils sont introduits.
-SCHEMAS_BY_WEEKEND = {
-    1: [("schema-self.png", "Schéma du Self")],
-    2: [
-        ("cycle-du-contact.png", "Cycle du contact"),
-        ("continuum-limites-ideal.png", "Continuum limites / idéal"),
-        ("poles-bonheur.png", "Les 3 pôles du bonheur"),
-    ],
-    3: [
-        ("barometre-stress.png", "Baromètre du stress"),
-        ("phases-stress-selye.png", "3 phases du stress (Selye)"),
-        ("fight-flight-freeze.png", "Fight / Flight / Freeze"),
-        ("axe-verticalite-horizontalite.png", "Axe verticalité / horizontalité"),
-        ("intentionnalite-voilier.png", "L'intentionnalité (métaphore du voilier)"),
-    ],
-    4: [
-        ("maison-cerveau.png", "La maison-cerveau"),
-        ("grille-communication.png", "Grille de communication"),
-    ],
-    5: [
-        ("mecanismes-regulation-contact.png", "Mécanismes de régulation du contact"),
-        ("niveaux-communication.png", "Niveaux de communication"),
-    ],
-    6: [("quatre-champs-therapeutiques.png", "Les 4 champs thérapeutiques")],
-}
+# Les fichiers docs/themes/*.md référencent les images en chemin relatif
+# (../../app/assets/images/x.png), pratique pour les lire hors de l'app (GitHub,
+# éditeur...). Streamlit ne sait pas servir un chemin de fichier local relatif dans
+# du Markdown : on les convertit donc en data URI base64 avant affichage.
+_IMG_PATTERN = re.compile(r"!\[([^\]]*)\]\(\.\./\.\./app/assets/images/([a-zA-Z0-9_-]+\.png)\)")
 
 
-def read_weekend(weekend):
-    path = COURS_DIR / weekend["file"]
-    return path.read_text(encoding="utf-8")
+def _inline_images(markdown_text):
+    def replace(match):
+        alt, filename = match.group(1), match.group(2)
+        path = IMAGES_DIR / filename
+        if not path.exists():
+            return ""
+        data = base64.b64encode(path.read_bytes()).decode("ascii")
+        return f"![{alt}](data:image/png;base64,{data})"
+
+    return _IMG_PATTERN.sub(replace, markdown_text)
+
+
+def read_theme(theme):
+    path = THEMES_DIR / theme["file"]
+    return _inline_images(path.read_text(encoding="utf-8"))
 
 
 def image_path(filename):
     path = IMAGES_DIR / filename
     return path if path.exists() else None
-
-
-def schema_images(weekend):
-    """Schémas déjà générés et disponibles pour ce week-end (liste de (path, légende))."""
-    items = []
-    for filename, label in SCHEMAS_BY_WEEKEND.get(weekend["order"], []):
-        path = image_path(filename)
-        if path:
-            items.append((path, label))
-    return items
 
 
 def theme_icon(number):

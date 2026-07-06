@@ -1,37 +1,40 @@
 # Sources externes — index
 
-Documentation collectée en ligne pour fiabiliser et compléter les notes de cours personnelles (`docs/cours/`). Contrairement aux fichiers `docs/cours/`, ces fichiers proviennent de **sources tierces** (site de l'école, articles de praticiens, résumés académiques) et servent de **référence de contrôle**, pas de retranscription de notes.
+Le contenu de connaissance par thème (fusion notes de formation + sources vérifiées)
+vit désormais dans `docs/themes/` — voir `docs/themes/00-themes-qcm.md` pour le
+sommaire des 11 thèmes. Ce dossier `docs/sources/` ne conserve que ce qui **ne se
+rattache pas à un thème unique** : contexte institutionnel/historique et fiches de
+référence pour les cycles à venir.
 
 ## Fichiers
 
-- **`ifas-programme-officiel.md`** — Extraction du programme officiel de l'**IFAS – École Humaniste de Gestalt** (l'école d'Arnaud Sebal, celle de la formation suivie). Contient la structure officielle du Cycle 1, l'historique de Frederick Perls, les valeurs/cadre de l'école, les 4 champs thérapeutiques, les enjeux de développement, les listes officielles de croyances positives/négatives et la table des émotions.
-- **`theorie-self-frontiere-contact-phg.md`** — Théorie du Self, frontière-contact, ajustement créateur/conservateur, mécanismes de régulation du contact : synthèse croisée entre le texte fondateur *Gestalt Therapy* (Perls, Hefferline, Goodman, 1951) et des articles de praticiens contemporains.
-- **`champ-histoire-perls.md`** — Théorie du champ (Kurt Lewin), histoire de Frederick Perls et naissance de la Gestalt-thérapie, théorie paradoxale du changement (Arnold Beisser).
+- **`ifas-programme-officiel.md`** — Structure institutionnelle et historique de
+  l'IFAS : programme officiel du Cycle 1 (version 2017-2019, 7 week-ends), histoire
+  de Frederick Perls, contenu historique des week-ends « Agir »/« Relations »
+  (hors périmètre du Cycle 1 actuel, 6 week-ends), certification.
+- **`cycle-2-reference.md`** — Fiche de référence structurelle du Cycle 2
+  (« Gestalt Praticien » — Estime de soi / Attachement), à venir dans le cursus.
+- **`cycle-3-reference.md`** — Fiche de référence structurelle du Cycle 3
+  (« Gestalt Thérapeute » — Argent-Abondance / Buts de vie), à venir dans le cursus.
 
-## Sources brutes consultées (URLs)
+## Sources brutes consultées (URLs) — pour le contenu institutionnel ci-dessus
 
 | Source | URL | Fiabilité |
 |---|---|---|
-| Livret pédagogique Cycle 1 — IFAS (v. 2017-2018) | https://www.gestalt.fr/wp-content/uploads/2018/03/programme-cycle_1.pdf | **Officielle** — le document de l'école elle-même |
+| Livret pédagogique Cycle 1 — IFAS (v. 2017-2018) | https://www.gestalt.fr/wp-content/uploads/2018/03/programme-cycle_1.pdf | **Officielle** |
 | Plaquette « Les Clefs Essentielles de la Gestalt » — IFAS (v. 2019) | https://www.gestalt.fr/wp-content/uploads/2019/07/plaket_ifas_cycle1.pdf | **Officielle** |
-| La théorie du Self selon la Gestalt — gestalt.fr (IFAS) | https://gestalt.fr/la-theorie-du-self-selon-la-gestalt/ | **Officielle** |
-| La frontière-contact en Gestalt — gestalt.fr (IFAS) | https://gestalt.fr/frontiere-contact-en-gestalt-votre-lien-avec-le-monde/ | **Officielle** |
-| PHG chapitre 1 — résumé par Claudia Gaulé — EPG Gestalt | https://www.epg-gestalt.fr/media/PHG_chap1_Claudia%20Gaulé.pdf | Académique (résumé du texte fondateur) |
-| Gestalt-thérapie — Wikipédia | https://fr.wikipedia.org/wiki/Gestalt-th%C3%A9rapie | Généraliste |
-| Les mécanismes de régulation du contact — psychotherapie-gestalt-paris.com | https://psychotherapie-gestalt-paris.com/mecanismes-defense-gestalt/ | Praticien indépendant |
-| La rétroflexion en Gestalt — therapeute-gestalt.net | https://www.therapeute-gestalt.net/gestalt-article-interruption-cycle-contact-retroflexion.php | Praticien indépendant |
-| Le champ organisme/environnement — pepsic.bvsalud.org | https://pepsic.bvsalud.org/scielo.php?script=sci_arttext&pid=S1808-42812009000100003 | Revue scientifique (PEPSIC) |
-| La théorie paradoxale du changement — aldelacroix-gestalt.fr | https://www.aldelacroix-gestalt.fr/la-theorie-paradoxale-du-changement/ | Praticien indépendant |
+| Plaquette Cycle 2 — IFAS | https://www.gestalt.fr/wp-content/uploads/2020/05/new_plaket_ifas_cycle2_05_19.pdf | **Officielle** |
+| Plaquette Cycle 3 — IFAS | https://www.gestalt.fr/wp-content/uploads/2020/05/plaket_ifas_cycle3.pdf | **Officielle** |
+| Fiche formation Cycle 1 & 2 — Intercariforef | https://www.intercariforef.org/formations/gestalt-praticien-cycle-1-cycle-2-complet/institut-de-formation-arnaud-sebal-ifas/formation-14_AF_0000208448_SE_0001294013.html | Officielle (organisme régional) |
 
-## ⚠️ Point de vigilance — évolution du programme IFAS
+Les sources spécifiques à chaque thème (textes académiques, praticiens, sociétés
+savantes) sont citées directement en bas de chaque fichier `docs/themes/NN-*.md`.
 
-Les deux documents officiels IFAS datent de **2017-2018** et **2019**, et décrivent un Cycle 1 en **7 week-ends** :
-1. Nouveau Départ
-2. Clarté
-3. Vivre
-4. Expression
-5. Confiance
-6. Agir
-7. Relations
+## Point résolu — nombre de week-ends du Cycle 1
 
-Les notes de cours 2026 (`docs/cours/`) ne couvrent que **6 week-ends** (Nouveau départ, Clarté, Vivre, Relation, Expression, Confiance — dans cet ordre, avec un module « Relation » axé neurosciences non identifié tel quel dans les documents 2017-2019). Le programme a donc probablement été réorganisé/mis à jour depuis. **Le contenu conceptuel reste cohérent** (mêmes notions, mêmes outils), seule la découpe en week-ends/l'intitulé exact diffère. Les week-ends « Agir » et « Relations » du programme 2019 ne semblent pas encore couverts dans les notes actuelles — à surveiller si de nouvelles notes arrivent.
+Les documents officiels 2017-2019 décrivaient un Cycle 1 en **7 week-ends** (avec
+« Agir » et « Relations » en fin de cycle). Le Cycle 1 réellement suivi est
+confirmé à **6 week-ends** (Nouveau départ, Clarté, Vivre, Relation, Expression,
+Confiance) — le programme a été réorganisé depuis 2019. Le contenu historique
+« Agir »/« Relations » est conservé dans `ifas-programme-officiel.md` à titre de
+curiosité, hors périmètre du QCM actuel.
