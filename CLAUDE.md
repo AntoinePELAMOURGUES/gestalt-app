@@ -106,7 +106,7 @@ week-ends) et fiches de référence structurelles pour les cycles à venir
 - ~~Générer les images~~ → fait : 31 images (`app/assets/images/`) via `scripts/generate_images.py`.
 - ~~Réorganiser `docs/` par thème plutôt que par week-end~~ → fait : `docs/themes/01-*.md` à `11-*.md`.
 - Mettre à jour l'app (`lib/content.py`, `pages/cours.py`) pour naviguer par thème au lieu de week-end.
-- Enrichir la banque de QCM à partir de cette nouvelle matière (plus riche que les notes brutes d'origine) — étape séparée, à proposer.
+- ~~Enrichir la banque de QCM à partir de `docs/themes/`~~ → fait : `data/seed_questions_v2.sql`, +100 questions (157 au total).
 - Itérer sur l'app : affiner l'UI au fil de l'usage réel, envisager un mode "réviser mes questions ratées" depuis l'historique.
 
 ## Dépôt Git

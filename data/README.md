@@ -79,9 +79,10 @@ order by echecs desc;
    psql "$DATABASE_URL" -f data/schema.sql
    psql "$DATABASE_URL" -f data/seed_themes.sql
    psql "$DATABASE_URL" -f data/seed_questions.sql
+   psql "$DATABASE_URL" -f data/seed_questions_v2.sql
    ```
 
-`data/seed_questions.sql` contient une première banque de 57 questions générée à partir de `docs/cours/*.md` (4 choix par question, 1 seule bonne réponse, explication et `source_file` renseignés, tags de thème via `question_themes` — certaines questions touchent plusieurs thèmes à la fois, fidèle à la logique N:N du schéma).
+`data/seed_questions.sql` contient une première banque de 57 questions (IDs 1-57), générée à partir des anciennes notes `docs/cours/*.md`. `data/seed_questions_v2.sql` l'enrichit de 100 questions supplémentaires (IDs 58-157), générées à partir de la base de connaissance réorganisée par thème (`docs/themes/*.md`), sans doublon de fond avec la v1. Soit **157 questions au total**. Même format pour les deux : 4 choix par question, 1 seule bonne réponse, explication et `source_file` renseignés, tags de thème via `question_themes`.
 
 ## Choix délibérément simples (YAGNI)
 
