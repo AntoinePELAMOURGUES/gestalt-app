@@ -18,10 +18,39 @@ gestalt-app/
 ├── docs/
 │   ├── themes/                 # index des 11 thèmes officiels du QCM Cycle 1
 │   ├── cours/                  # transcription structurée des notes de cours, par week-end
-│   └── sources/                # documentation externe (site officiel IFAS, textes académiques) pour fiabiliser/compléter les notes
-├── app/                        # (à venir) code de l'application Streamlit
-└── data/                       # schéma de la base de données QCM (Neon/PostgreSQL) + seeds
+│   ├── sources/                # documentation externe (site officiel IFAS, textes académiques) pour fiabiliser/compléter les notes
+│   └── images/                  # prompts.txt pour la génération d'images (Gemini Nano Banana) + sources brutes
+├── app/                        # application Streamlit
+│   ├── app.py                   # point d'entrée (st.navigation + injection du thème)
+│   ├── .streamlit/config.toml    # palette "Terre et Présence" (thème natif Streamlit)
+│   ├── lib/                       # db.py (connexion Postgres), queries.py (SQL), content.py (lecture docs/cours), theme.py (CSS/badges)
+│   ├── pages/                      # accueil.py, cours.py, quiz.py, historique.py
+│   └── assets/images/               # images générées (voir docs/images/prompts-nanobanana.txt), optionnelles
+└── data/                       # schéma de la base de données QCM (Supabase/PostgreSQL) + seeds
 ```
+
+### Thème visuel de l'app — "Terre et Présence"
+
+Le thème visuel n'est pas décoratif : il réutilise le vocabulaire même du cours
+pour rester didactique et cohérent avec l'esprit Gestalt.
+
+- **Figure/Fond** : chaque unité (carte de question, section de cours, tuile de
+  stat) est une "figure" nette sur un "fond" calme — un seul focus par écran.
+- **Prägnanz / unité** : une seule famille de couleurs pour toute l'app ; les 11
+  thèmes se distinguent par numéro + pictogramme, jamais par une teinte différente.
+- **Baromètre du stress recyclé comme langage fonctionnel** : les couleurs
+  Orange/Bleu/Vert du baromètre (`docs/cours/03-vivre.md`) deviennent le code
+  couleur de progression (à réviser / en cours / maîtrisé). Pas de rouge
+  d'alarme nulle part (esprit non-jugement).
+- Palette : fond `#FAF6F0`, surface `#FFFFFF`, texte `#2E2A26`, accent primaire
+  `#C1602C` (terracotta), succès `#5C7A5E` (vert), neutre `#5E7C99` (bleu),
+  attention `#D98E4A` (ocre). Titres en serif chaleureux (Georgia), corps en
+  police système — pas de police externe chargée.
+
+Voir `docs/images/prompts-nanobanana.txt` pour la banque de prompts d'images
+(schémas pédagogiques, couvertures de week-end, pictogrammes de thème) —
+l'app fonctionne sans elles, elles s'ajoutent au fur et à mesure dans
+`app/assets/images/`.
 
 ## Base de données : Supabase (PostgreSQL)
 
@@ -65,10 +94,12 @@ Documentation **externe** (site officiel de l'IFAS - École Humaniste de Gestalt
 
 ## Prochaines étapes (à valider avec l'utilisateur avant d'agir)
 
+- ~~Générer une première banque de questions QCM~~ → fait : 57 questions dans `data/seed_questions.sql`, chargées en base.
+- ~~Créer le projet Supabase, exécuter `data/schema.sql` + `data/seed_themes.sql`~~ → fait.
+- ~~Développer le squelette de l'app Streamlit~~ → fait : navigation, thème visuel, pages Accueil/Cours/Quiz/Historique fonctionnelles de bout en bout.
+- Générer les images (`docs/images/prompts-nanobanana.txt`) et les déposer dans `app/assets/images/`.
 - Poursuivre l'enrichissement si besoin (ex. week-ends « Agir » et « Relations » non encore couverts par les notes de cours).
-- Générer une première banque de questions QCM (à partir de `docs/cours/` et `docs/sources/`) et l'insérer via `data/seed_questions.sql`.
-- Créer le projet Neon, exécuter `data/schema.sql` + `data/seed_themes.sql`.
-- Développer l'app Streamlit (`app/`) : navigation par thème/week-end (lecture directe des Markdown), système de QCM (choix unique, filtrage par thème, explication après réponse), suivi de progression.
+- Itérer sur l'app : affiner l'UI au fil de l'usage réel, envisager un mode "réviser mes questions ratées" depuis l'historique.
 
 ## Dépôt Git
 

@@ -1,0 +1,247 @@
+PROMPTS D'IMAGES — App Gestalt Cycle 1
+========================================
+
+Comment utiliser ce fichier :
+1. Pour chaque image, colle le PRÉFIXE DE STYLE ci-dessous suivi du prompt
+   spécifique de l'image, dans Gemini "Nano Banana" (ou tout autre générateur).
+2. Enregistre le résultat sous le NOM DE FICHIER EXACT indiqué, en .png.
+3. Dépose le fichier dans app/assets/images/ — le code le détecte
+   automatiquement (rien à modifier), sinon l'app fonctionne sans l'image.
+4. Si un rendu ne convient pas, régénère avec le même prompt (variation
+   aléatoire) plutôt que de changer le style — on veut une série cohérente.
+
+------------------------------------------------------------------------------
+PRÉFIXE DE STYLE (à coller devant CHAQUE prompt ci-dessous)
+------------------------------------------------------------------------------
+
+Illustration plate (flat design), style éditorial chaleureux et épuré, inspiré
+de la pensée Gestalt (thérapie humaniste) : formes organiques et arrondies,
+pas de perspective 3D, pas de photoréalisme, pas de style "corporate" ou
+clinique. Palette de couleurs restreinte et cohérente sur toute la série :
+fond ivoire chaud (#FAF6F0), terracotta/ocre comme couleur dominante
+(#C1602C), vert sauge (#5C7A5E), bleu doux (#5E7C99), touches d'ocre clair
+(#D98E4A) — jamais de rouge vif, jamais de noir pur. Traits fins et réguliers,
+ombres douces, ambiance apaisante et humaine. Composition centrée, fond neutre
+uni ou légèrement texturé, en laissant de l'espace autour du sujet principal.
+IMPORTANT : aucun texte, aucune lettre, aucun chiffre, aucune légende dans
+l'image — uniquement des formes, symboles et pictogrammes (les légendes sont
+ajoutées ensuite dans l'application).
+
+==============================================================================
+CATÉGORIE A — Schémas pédagogiques fidèles (priorité haute)
+==============================================================================
+Format recommandé : paysage (16:9 ou 4:3).
+
+--- Fichier : cycle-du-contact.png ---
+Un cycle circulaire fluide en 8 segments organiques de tailles égales,
+disposés en cercle complet, dégradé progressif du vert sauge (en haut, le
+retrait/repos) vers l'ocre chaud (le sommet du cercle, le contact) puis retour
+vers le vert : évoque la respiration d'un cycle qui part du calme, monte vers
+un pic d'énergie et redescend. Au centre du cercle, une forme organique douce
+et abstraite suggère l'idée de "vide créateur" (un espace vide, calme).
+Aucune flèche agressive, des transitions douces entre segments.
+
+--- Fichier : schema-self.png ---
+Un cercle formé d'un pointillé régulier (pas un trait plein) — suggère une
+frontière ouverte et perméable, pas une clôture. À l'intérieur, trois zones
+concentriques ou superposées en formes organiques : une zone centrale dense
+(ocre foncé), une zone intermédiaire (terracotta), une zone périphérique plus
+large et douce (beige clair) — comme trois strates d'un même tout, sans
+lignes de séparation dures entre elles, illustrant un processus fluide plutôt
+qu'une structure rigide.
+
+--- Fichier : barometre-stress.png ---
+Un baromètre vertical arrondi (forme de thermomètre organique, pas
+industrielle), divisé en 3 zones de hauteur égale du bas vers le haut : vert
+sauge en bas (calme), ocre clair au milieu, terracotta en haut. Un petit
+curseur/indicateur en forme de goutte se trouve à mi-hauteur. Design épuré,
+arrondi, pas d'aiguille métallique ni d'esthétique médicale.
+
+--- Fichier : phases-stress-selye.png ---
+Trois collines/vagues organiques consécutives de hauteur croissante puis
+décroissante (silhouette montagneuse douce), représentant 3 phases qui se
+suivent dans le temps : la première vague plus haute et pointue (alerte), la
+deuxième plus large et étalée (résistance/plateau), la troisième qui
+s'affaisse doucement (épuisement). Dégradé de couleurs terracotta → ocre →
+beige pâle de la première à la dernière vague.
+
+--- Fichier : fight-flight-freeze.png ---
+Trois formes organiques abstraites de même taille disposées côte à côte sur
+une ligne horizontale, chacune évoquant un état différent sans figure
+humaine ni visage : une forme dynamique aux contours vifs (élan, mouvement),
+une forme allongée en fuite/traînée douce, une forme compacte et immobile
+repliée sur elle-même. Palette terracotta pour les deux premières, bleu doux
+pour la troisième (évoque le système parasympathique).
+
+--- Fichier : axe-verticalite-horizontalite.png ---
+Un arbre stylisé très épuré et symétrique, silhouette organique simple : des
+racines rondes qui plongent vers le bas (ancrage, terre en ton ocre sombre),
+un tronc vertical fin, une frondaille arrondie et ouverte vers le haut (ciel,
+en dégradé bleu doux très clair). Une ligne horizontale discrète traverse le
+tronc à mi-hauteur, suggérant l'axe horizontal du contact avec l'environnement.
+Composition très centrée et minimaliste.
+
+--- Fichier : maison-cerveau.png ---
+Une coupe transversale d'une maison douce et arrondie (pas de toit pointu
+agressif, architecture chaleureuse), vue de face, avec 5 à 7 pièces visibles
+de tailles différentes disposées comme dans une maison de poupée : une grande
+pièce principale au centre (salon), une petite pièce cachée en sous-sol, une
+pièce technique discrète, une pièce ouverte type salle de sport, un espace
+central avec un rond évoquant un thermostat, une pièce en hauteur plus calme
+(suite). Palette terracotta/ocre/beige, aucune pièce ne doit contenir de texte
+ni de mobilier détaillé — juste des volumes simples et des teintes distinctes
+par pièce dans la palette autorisée.
+
+--- Fichier : grille-communication.png ---
+Une grille organique de 3 lignes sur 3 colonnes, mais dessinée avec des
+cellules aux coins arrondis plutôt qu'un tableau strict — chaque cellule est
+une forme douce de taille égale, certaines cellules plus "pleines"
+(remplissage terracotta dense) pour évoquer une communication authentique,
+d'autres plus "vides" ou hachurées légèrement (beige clair) pour évoquer une
+communication superficielle. Pas de texte, pas de croix ni de coches.
+
+--- Fichier : mecanismes-regulation-contact.png ---
+Une ligne verticale ondulée et douce au centre de l'image représentant la
+frontière-contact (pas une ligne droite rigide — organique, semi-perméable).
+De part et d'autre, 6 petites formes-flèches organiques distinctes qui
+traversent ou rebondissent sur cette frontière de façons différentes : une
+qui la traverse librement dans les deux sens (confluence), une qui rebondit
+sans jamais la toucher (égotisme), une qui part d'un côté vers l'autre en
+arc (projection), une qui entre massivement d'un seul côté (introjection),
+une qui repart en arrière juste avant de la franchir (rétroflexion), une qui
+change de direction en cours de route (déflexion). Palette limitée aux tons
+terracotta/ocre/vert sauge pour les flèches, fond ivoire.
+
+--- Fichier : niveaux-communication.png ---
+Trois formes organiques superposées verticalement représentant une montée en
+conscience, du bas vers le haut : en bas, une forme pointue et fermée en
+ocre foncé (jugement, fermeture) ; au milieu, trois petites formes rondes
+alignées et ouvertes en terracotta (une structure en 3 temps calme et
+posée) ; en haut, une forme large, ouverte et lumineuse en vert sauge très
+clair, presque translucide (conscience élargie, accueil). Sensation de
+verticalité ascendante et d'ouverture progressive.
+
+--- Fichier : quatre-champs-therapeutiques.png ---
+Quatre quadrants de taille égale disposés en cercle (pas un carré à angles
+durs — des quartiers arrondis façon "fleur à 4 pétales"), chaque pétale dans
+une teinte légèrement différente de la palette (terracotta, ocre clair, vert
+sauge, bleu doux), reliés en leur centre par un petit cœur commun de couleur
+neutre — évoque 4 perspectives distinctes reliées à un même centre (le
+travail thérapeutique).
+
+--- Fichier : intentionnalite-voilier.png ---
+Un petit voilier stylisé et minimaliste (forme géométrique très simple, une
+voile triangulaire douce) voguant sur une mer suggérée par 2-3 lignes
+horizontales ondulées, en direction d'une petite île arrondie à l'horizon
+(quelques formes rondes évoquant une végétation douce). Palette : mer en
+bleu doux, voilier en terracotta, île en vert sauge. Ambiance calme, sereine,
+pas de tempête.
+
+--- Fichier : continuum-limites-ideal.png ---
+Une ligne horizontale douce en forme d'arc très léger (pas droite et rigide)
+allant d'une forme compacte et ancrée à gauche (petit cercle dense, ocre
+foncé, évoque les limites/le réel) vers une forme ouverte et rayonnante à
+droite (grand cercle lumineux aux contours diffus, vert sauge très clair,
+évoque l'idéal/le possible). Un petit curseur rond terracotta se trouve
+quelque part sur la ligne, plus proche du centre.
+
+--- Fichier : poles-bonheur.png ---
+Trois cercles organiques de taille égale qui se chevauchent légèrement au
+centre (diagramme de Venn doux, pas de traits durs), chacun dans une teinte
+distincte de la palette (terracotta, vert sauge, bleu doux), avec une petite
+zone commune plus lumineuse au point de rencontre des trois — évoque
+l'équilibre entre plusieurs sphères de vie qui se renforcent mutuellement.
+
+==============================================================================
+CATÉGORIE B — Couvertures par week-end (identité visuelle, décoratives)
+==============================================================================
+Format recommandé : bannière large (16:9), symbolique et non littérale —
+une ambiance et une forme centrale par semaine, pas une scène illustrée.
+
+--- Fichier : couverture-01-nouveau-depart.png ---
+Une page/feuille blanche organique légèrement froissée qui se déplie doucement
+au centre de l'image, sur fond ivoire, avec un petit rayon de lumière douce en
+haut à gauche (ocre clair) — évoque un commencement, une page blanche, un
+nouveau départ. Ambiance calme et pleine de potentiel.
+
+--- Fichier : couverture-02-clarte.png ---
+Une forme circulaire simple et lumineuse (comme un petit soleil doux, pas
+éblouissant) au centre, entourée de quelques lignes courbes fines qui
+s'écartent d'elle comme des ondes de clarté, sur fond ivoire. Palette
+terracotta et ocre clair. Évoque la clarté, la vision qui se dégage.
+
+--- Fichier : couverture-03-vivre.png ---
+Une vague organique unique et fluide qui traverse l'image de gauche à droite,
+avec une variation d'amplitude douce (ni plate ni chaotique) — évoque le
+mouvement de la vie, la respiration, le passage entre tension et détente.
+Dégradé vert sauge vers bleu doux.
+
+--- Fichier : couverture-04-relation.png ---
+Deux formes organiques rondes de taille légèrement différente, proches l'une
+de l'autre sans se toucher complètement, reliées par une fine ligne de
+lumière douce entre les deux — évoque le lien, la rencontre entre deux
+organismes, sans figures humaines. Palette terracotta et bleu doux.
+
+--- Fichier : couverture-05-expression.png ---
+Une forme organique centrale d'où rayonnent doucement plusieurs petites
+formes ondulées vers l'extérieur, comme des ondes sonores très douces et
+arrondies (pas des éclairs) — évoque la parole qui sort, l'expression qui se
+déploie vers l'environnement. Palette terracotta rayonnant sur fond ivoire.
+
+--- Fichier : couverture-06-confiance.png ---
+Une forme organique ronde et pleine, bien ancrée au centre de l'image,
+entourée d'un halo doux et stable (pas scintillant) — évoque la solidité, la
+confiance acquise, l'aboutissement du cycle 1. Palette vert sauge profond
+avec un cœur terracotta chaud.
+
+==============================================================================
+CATÉGORIE C — Pictogrammes des 11 thèmes (priorité basse)
+==============================================================================
+Format recommandé : carré (1:1), un seul jeu cohérent — même style, même
+teinte (terracotta) pour les 11, on ne différencie PAS les thèmes par couleur
+(cohérence Gestalt : un tout, pas 11 fragments) mais uniquement par la forme
+du pictogramme.
+
+--- Fichier : theme-01.png --- (Qu'est-ce que la Gestalt ?)
+Pictogramme minimaliste en ligne épaisse terracotta sur fond ivoire : une
+forme abstraite évoquant une "autre forme" en train d'émerger — deux formes
+géométriques simples qui se fondent l'une dans l'autre.
+
+--- Fichier : theme-02.png --- (L'ici et maintenant)
+Pictogramme : un point central plein entouré d'un seul cercle concentrique
+fin — évoque le moment présent, sans passé ni futur représentés.
+
+--- Fichier : theme-03.png --- (Théorie du champ)
+Pictogramme : une petite forme simple entourée d'un halo de courbes
+concentriques légères — évoque l'organisme dans son environnement.
+
+--- Fichier : theme-04.png --- (Théorie du self / frontière-contact)
+Pictogramme : un cercle en pointillé (trait discontinu) — évoque la
+frontière-contact perméable.
+
+--- Fichier : theme-05.png --- (Page blanche / ajustement)
+Pictogramme : une feuille rectangulaire aux coins arrondis, totalement vierge
+et légèrement inclinée, comme posée en train de se déplier.
+
+--- Fichier : theme-06.png --- (Valeurs et déontologie)
+Pictogramme : un cadre carré aux coins très arrondis, vide en son centre —
+évoque le cadre/espace sécurisant.
+
+--- Fichier : theme-07.png --- (Communication bienveillante)
+Pictogramme : deux formes ovales douces face à face, reliées par une courbe
+fine entre elles — évoque un échange à deux niveaux.
+
+--- Fichier : theme-08.png --- (Mécanismes de régulation du contact)
+Pictogramme : une ligne verticale ondulée simple avec une seule petite forme
+qui la traverse en arc — évoque un mécanisme de régulation à la frontière.
+
+--- Fichier : theme-09.png --- (4 champs thérapeutiques)
+Pictogramme : quatre petits quartiers arrondis disposés en cercle façon
+fleur à 4 pétales (version simplifiée et très épurée du schéma complet).
+
+--- Fichier : theme-10.png --- (Vision gestaltiste du stress)
+Pictogramme : une forme de goutte/thermomètre très simplifiée, à mi-hauteur.
+
+--- Fichier : theme-11.png --- (Cycle du contact)
+Pictogramme : un cercle complet formé d'un dégradé subtil, sans début ni fin
+marqués — version très épurée du cycle complet.
