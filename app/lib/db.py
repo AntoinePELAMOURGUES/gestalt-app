@@ -8,9 +8,21 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+def _database_url():
+    # Sur Streamlit Community Cloud, les secrets sont saisis dans le tableau de
+    # bord et exposés via st.secrets (pas de fichier .env sur la plateforme).
+    # En local, .env + python-dotenv suffit.
+    try:
+        if "DATABASE_URL" in st.secrets:
+            return st.secrets["DATABASE_URL"]
+    except Exception:
+        pass
+    return os.environ["DATABASE_URL"]
+
+
 @st.cache_resource
 def get_connection():
-    conn = psycopg2.connect(os.environ["DATABASE_URL"])
+    conn = psycopg2.connect(_database_url())
     conn.autocommit = True
     return conn
 
