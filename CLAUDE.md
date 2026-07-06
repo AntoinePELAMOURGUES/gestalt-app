@@ -20,8 +20,18 @@ gestalt-app/
 │   ├── cours/                  # transcription structurée des notes de cours, par week-end
 │   └── sources/                # documentation externe (site officiel IFAS, textes académiques) pour fiabiliser/compléter les notes
 ├── app/                        # (à venir) code de l'application Streamlit
-└── data/                       # (à venir) banque de questions QCM, données structurées (JSON/CSV/DB)
+└── data/                       # schéma de la base de données QCM (Neon/PostgreSQL) + seeds
 ```
+
+## Base de données : Neon (PostgreSQL serverless)
+
+Choix fait après avoir buté sur la limite de 2 projets actifs du free tier Supabase. **Neon** héberge uniquement les données du système de QCM (thèmes, questions, choix, historique des réponses) — le contenu pédagogique reste dans `docs/cours/` et `docs/sources/`, lu directement par l'app. Voir `data/README.md` pour le détail du schéma, les requêtes types et la mise en place.
+
+Caractéristiques du QCM retenues :
+- **Choix unique** par question (4 propositions, une seule correcte).
+- **Mode apprentissage** : chaque question a une explication affichée après la réponse (pourquoi c'est la bonne réponse).
+- **Historique persistant** des réponses (progression par thème dans le temps, questions à réviser en priorité).
+- **Filtrage par thème(s)** : l'utilisatrice choisit un ou plusieurs des 11 thèmes avant de lancer une session de quiz.
 
 ### `docs/cours/`
 
@@ -54,8 +64,13 @@ Documentation **externe** (site officiel de l'IFAS - École Humaniste de Gestalt
 ## Prochaines étapes (à valider avec l'utilisateur avant d'agir)
 
 - Poursuivre l'enrichissement si besoin (ex. week-ends « Agir » et « Relations » non encore couverts par les notes de cours).
-- Concevoir le schéma de données pour la banque de QCM (`data/`).
-- Développer l'app Streamlit (`app/`) : navigation par thème/week-end, génération de QCM, suivi de progression.
+- Générer une première banque de questions QCM (à partir de `docs/cours/` et `docs/sources/`) et l'insérer via `data/seed_questions.sql`.
+- Créer le projet Neon, exécuter `data/schema.sql` + `data/seed_themes.sql`.
+- Développer l'app Streamlit (`app/`) : navigation par thème/week-end (lecture directe des Markdown), système de QCM (choix unique, filtrage par thème, explication après réponse), suivi de progression.
+
+## Dépôt Git
+
+Le projet est versionné sur GitHub : https://github.com/AntoinePELAMOURGUES/gestalt-app (branche `main`).
 
 ## Conventions
 
